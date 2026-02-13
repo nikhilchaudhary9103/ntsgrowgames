@@ -4,7 +4,7 @@
 
 ## 🚀 Live Website
 Experience the games here: 
-👉 [https://nikhilchaudhary9103.github.io/ntsgrowgames/index.html](https://nikhilchaudhary9103.github.io/ntsgrowgames/index.html)
+👉 [https://inox9103.github.io/ntsgrowgames/index.html](https://inox9103.github.io/ntsgrowgames/index.html)
 
 ---
 
