@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support · NTS GAME</title>
+    <style>
+        /* ekdum simple — minimal css, white theme, fast load */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            color: #1a1a1a;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        /* simple heading */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.3px;
+            color: #111;
+        }
+        .sub {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+        /* qr code image — centre me */
+        .qr-wrapper {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #fff;
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        .qr-wrapper img {
+            width: 220px;
+            height: auto;
+            display: block;
+        }
+        /* qr ke neeche bhi number */
+        .qr-number {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2c3e4e;
+            background: #f8f8f8;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+        /* divider */
+        .divider {
+            margin: 2rem 0 1.5rem;
+            border-top: 1px solid #ececec;
+            width: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* contact section — clean */
+        .contact {
+            background: #fafafa;
+            padding: 1.2rem 1rem;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+            font-size: 1rem;
+        }
+        .contact-item i {
+            width: 28px;
+            color: #3a6b4b;
+            font-size: 1.2rem;
+        }
+        .contact-item a, .contact-item span {
+            text-decoration: none;
+            color: #1e3b3b;
+            font-weight: 500;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .small-note {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        button.copy-btn {
+            background: transparent;
+            border: 1px solid #ccc;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: monospace;
+            color: #555;
+            margin-left: 8px;
+        }
+        button.copy-btn:hover {
+            background: #eaeaea;
+        }
+        /* responsive */
+        @media (max-width: 500px) {
+            .qr-wrapper img {
+                width: 180px;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>✦ SUPPORT NTS GAME ✦</h1>
+    <div class="sub">contribute · keep it classic</div>
+
+    <!-- QR CODE image: qrcode.jpg (centre me) -->
+    <div class="qr-wrapper">
+        <img src="qrcode.jpg" alt="donation QR code" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22 viewBox=%220 0 200 200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23f0f0f0%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2212%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22%3EQR code%3C/text%3E%3C/svg%3E'">
+    </div>
+
+    <!-- QR ke neeche bhi mera number likha ho -->
+    <div class="qr-number">
+        📱 +91 8109927214
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- contact me: number aur gmail -->
+    <div class="contact">
+        <div class="contact-item">
+            <i>📞</i>
+            <span id="phoneNumber">+918109927214</span>
+            <button class="copy-btn" data-copy="+918109927214">copy</button>
+        </div>
+        <div class="contact-item">
+            <i>✉️</i>
+            <span id="emailId">ntsgrow2025@gmail.com</span>
+            <button class="copy-btn" data-copy="ntsgrow2025@gmail.com">copy</button>
+        </div>
+    </div>
+
+    <div class="small-note">
+        scan QR · any UPI app · thank you
+    </div>
+</div>
+
+<!-- simple copy function -->
+<script>
+    (function() {
+        const btns = document.querySelectorAll('.copy-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const text = this.getAttribute('data-copy');
+                if (!text) return;
+                navigator.clipboard.writeText(text).then(() => {
+                    const oldHtml = this.innerHTML;
+                    this.innerHTML = '✓ copied';
+                    setTimeout(() => {
+                        this.innerHTML = oldHtml;
+                    }, 1200);
+                }).catch(() => {
+                    // fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    const oldHtml = this.innerHTML;
+                    this.innerHTML = '✓ copied';
+                    setTimeout(() => {
+                        this.innerHTML = oldHtml;
+                    }, 1200);
+                });
+            });
+        });
+    })();
+</script>
+</body>
+</html>
