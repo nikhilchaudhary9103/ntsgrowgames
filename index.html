@@ -2,533 +2,563 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTS GAME · classic intellect</title>
-    <!-- Font Awesome 6 (free) for subtle classic icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>XPRIME Games · intellect arcade</title>
+    <!-- Font Awesome 6 (clean icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- PURE CLASSIC · MINIMAL · TIMELESS ---------- 
-           only "NTS GAME" appears · no extra words · deep navy & aged gold
-        ----------------------------------------------------------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', 'Inter', 'Georgia', 'Times New Roman', serif;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
 
         body {
-            background-color: #0b0e14;
-            color: #e0e5ec;
-            line-height: 1.6;
-            font-weight: 300;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
         }
 
-        /* classic vellum texture */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(45deg, rgba(212, 180, 80, 0.02) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(212, 180, 80, 0.02) 25%, transparent 25%);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* navigation – pure classic */
-        nav {
-            padding: 1.8rem 6%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #0f131c;
-            border-bottom: 2px solid #a3844d;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-size: 2rem;
-            font-weight: 400;
-            box-shadow: 0 8px 20px -8px #000000cc;
-        }
-
-        .logo {
-            color: #e5d9b5;
-            text-shadow: 2px 2px 0 #7a5f30;
-            font-family: 'Courier New', monospace;
-            word-spacing: 0.6rem;
-        }
-
-        .logo i {
-            color: #c9ad6e;
-            margin: 0 20px;
-            font-size: 1.8rem;
-            text-shadow: none;
-        }
-
-        /* hero – classic and quiet */
-        .hero {
-            min-height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(10, 14, 20, 0.9), rgba(10, 14, 20, 0.9)), 
-                        url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1400');
-            background-size: cover;
-            background-position: center 30%;
-            border-bottom: 1px solid #a3844d;
-            padding: 3rem 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-family: 'Georgia', serif;
-            font-weight: 400;
-            color: #f3ecd9;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            border: 2px solid #a3844d;
-            padding: 1rem 3rem;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(3px);
-            box-shadow: 0 0 30px rgba(163, 132, 77, 0.2);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #bcb09b;
-            max-width: 600px;
-            margin: 1.5rem 0 0.5rem;
-            font-style: italic;
-            font-family: 'Georgia', serif;
-            border-bottom: 1px dashed #a3844d;
-            padding-bottom: 1rem;
-        }
-
-        /* search section – classic blend */
-        .search-section {
-            display: flex;
-            justify-content: center;
-            margin: -1.8rem auto 2.5rem;
-            position: relative;
-            z-index: 20;
-        }
-
-        .search-wrapper {
-            background: #1a1f2b;
-            border-radius: 0;
-            border: 2px solid #a3844d;
-            padding: 0.2rem 0.2rem 0.2rem 2rem;
-            display: flex;
-            align-items: center;
-            width: min(600px, 90%);
-            box-shadow: 12px 12px 0 #0b0e14, 12px 12px 0 2px #a3844d;
-        }
-
-        .search-wrapper i {
-            color: #a3844d;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        #searchInput {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 1.2rem 0;
-            font-size: 1.2rem;
-            color: #e5dbbf;
-            outline: none;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 1.5px;
-        }
-
-        #searchInput::placeholder {
-            color: #5f6b7e;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .search-wrapper button {
-            background: #a3844d;
-            border: none;
-            padding: 1.1rem 2.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0b0e14;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: 0.15s;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            border-left: 2px solid #5e4a2e;
-        }
-
-        .search-wrapper button:hover {
-            background: #c9ad6e;
-            color: #07090e;
-        }
-
-        /* result count – classic understatement */
-        .result-count {
-            text-align: center;
-            margin: 1rem 0 0.5rem;
-            font-size: 0.95rem;
-            font-family: 'Courier New', monospace;
-        }
-
-        .result-count span {
-            color: #a3844d;
-            background: transparent;
-            padding: 0.2rem 1.5rem;
-            border: 1px solid #a3844d;
-            letter-spacing: 2px;
-        }
-
-        /* main container */
-        .container {
-            padding: 2rem 6% 3rem;
-            max-width: 1600px;
+        /* subtle grain-free, pure white minimal */
+        .app-wrapper {
+            max-width: 1440px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        /* classic section heading – only "nts game" */
-        .section-title {
-            text-align: center;
-            margin: 3rem 0 3rem;
+        /* ========= MODERN HEADER with XPRIME logo ========= */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* XPRIME mast logo: X with electric glow effect */
+        .brand {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            cursor: default;
+        }
+
+        .electric-x {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+            text-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+            animation: pulseGlow 1.8s infinite ease-in-out;
+            letter-spacing: -2px;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                text-shadow: 0 0 0px rgba(79, 70, 229, 0.3), 0 0 0px rgba(139, 92, 246, 0);
+                filter: drop-shadow(0 0 0px #4f46e5);
+            }
+            50% {
+                text-shadow: 0 0 6px rgba(79, 70, 229, 0.8), 0 0 12px rgba(139, 92, 246, 0.6);
+                filter: drop-shadow(0 0 3px #a78bfa);
+            }
+            100% {
+                text-shadow: 0 0 0px rgba(79, 70, 229, 0.3), 0 0 0px rgba(139, 92, 246, 0);
+                filter: drop-shadow(0 0 0px #4f46e5);
+            }
+        }
+
+        .prime-text {
             font-size: 2rem;
-            font-weight: 400;
-            font-family: 'Georgia', serif;
-            text-transform: uppercase;
-            color: #e9ddc7;
+            font-weight: 700;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+            margin-left: 4px;
+            background: linear-gradient(to right, #1e293b, #334155);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .games-suffix {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #475569;
+            margin-left: 8px;
+            letter-spacing: 0.5px;
+            align-self: flex-end;
+            margin-bottom: 0.5rem;
+        }
+
+        /* top-right action group: search icon + donate */
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* search icon trigger — elegant circle */
+        .search-trigger {
+            background: #ffffff;
+            width: 46px;
+            height: 46px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+            color: #1f2937;
         }
 
-        .section-title .line {
-            height: 2px;
-            width: 80px;
-            background: linear-gradient(90deg, transparent, #a3844d, transparent);
+        .search-trigger i {
+            font-size: 1.3rem;
+            color: #4b5563;
         }
 
-        .section-title .text {
-            border: 2px solid #a3844d;
-            padding: 0.3rem 2rem;
-            font-size: 2rem;
-            letter-spacing: 8px;
-            background: #0f131c;
-            box-shadow: 8px 8px 0 #020304;
+        .search-trigger:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: scale(0.97);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
-        /* game grid – classic cards, no extra ornaments */
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.2rem;
-        }
-
-        .game-card {
-            background: #131823;
-            padding: 2rem 1.2rem 2rem;
-            border: 2px solid #3b3f4b;
-            text-align: center;
-            transition: all 0.2s;
-            box-shadow: 10px 10px 0 #070a10;
-        }
-
-        .game-card:hover {
-            border-color: #a3844d;
-            background: #0e141f;
-            transform: translate(-4px, -4px);
-            box-shadow: 14px 14px 0 #020304;
-        }
-
-        /* classic icon frame */
-        .game-icon {
-            font-size: 2.8rem;
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #1f2635;
-            border: 2px solid #a3844d;
-            color: #cfb887;
-            transform: rotate(45deg);
-            transition: 0.2s;
-        }
-
-        .game-icon i {
-            transform: rotate(-45deg);
-        }
-
-        .game-card:hover .game-icon {
-            background: #2e384d;
-            border-color: #ebc87e;
-            color: #f5e2b6;
-        }
-
-        .game-card h3 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            font-family: 'Georgia', serif;
-            margin: 0.8rem 0 0.5rem;
-            color: #e3d6b5;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 1px dotted #a3844d;
-            padding-bottom: 0.8rem;
-        }
-
-        .game-card p {
-            color: #afb5c5;
-            font-size: 0.98rem;
-            margin: 0.5rem 0 1.8rem;
-            font-family: 'Courier New', monospace;
-            line-height: 1.4;
-        }
-
-        .btn {
+        /* donate button (pill style) */
+        .donate-btn {
+            background: transparent;
+            border: 1.5px solid #e2e8f0;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #0f172a;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 0.7rem 2rem;
+            transition: 0.2s;
+            background: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .donate-btn i {
+            color: #ef4444;
+            font-size: 0.9rem;
+        }
+
+        .donate-btn:hover {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #b91c1c;
+            transform: translateY(-1px);
+        }
+
+        /* ===== EXPANDABLE SEARCH BAR (overlay style, but clean) ===== */
+        .search-expand-area {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            background: #ffffff;
+            margin: 0 0 0.5rem 0;
+            border-radius: 40px;
+        }
+
+        .search-expand-area.open {
+            max-height: 90px;
+            margin: 0.5rem 0 1.2rem 0;
+        }
+
+        .search-bar-modern {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 60px;
+            padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+        }
+
+        .search-bar-modern:focus-within {
+            border-color: #a855f7;
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+        }
+
+        .search-bar-modern i {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            margin-right: 0.8rem;
+        }
+
+        #gameSearchInput {
+            flex: 1;
+            border: none;
+            padding: 0.9rem 0;
+            font-size: 1rem;
             background: transparent;
-            color: #e9ddc7;
-            text-decoration: none;
-            border: 2px solid #a3844d;
+            outline: none;
+            color: #0f172a;
+            font-weight: 450;
+        }
+
+        #gameSearchInput::placeholder {
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .search-clear-btn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 0 1rem;
+            transition: 0.1s;
+        }
+
+        .search-clear-btn:hover {
+            color: #1e293b;
+        }
+
+        /* result badge */
+        .stats-badge {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0.8rem 0 1.4rem;
+        }
+
+        .game-count-chip {
+            background: #f1f5f9;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
             font-weight: 500;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            transition: 0.15s;
-            background: #0b1018;
+            color: #334155;
+            letter-spacing: 0.3px;
+            border: 1px solid #e2e8f0;
         }
 
-        .btn i {
-            font-size: 1rem;
-            color: #a3844d;
+        .game-count-chip span {
+            font-weight: 700;
+            color: #4f46e5;
         }
 
-        .btn:hover {
-            background: #a3844d;
-            color: #0b0e14;
-            border-color: #ebc87e;
+        /* GAME GRID — modern & spacious */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 1rem 0 2.5rem;
         }
 
-        .btn:hover i {
-            color: #0b0e14;
+        .game-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.6rem 1.2rem 1.8rem;
+            transition: all 0.2s ease;
+            border: 1px solid #eef2ff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
         }
 
-        /* no result message */
-        .no-result {
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #ddd6fe;
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+            background: #fefefe;
+        }
+
+        /* icon round elegance */
+        .game-icon-modern {
+            background: #f1f4f9;
+            width: 64px;
+            height: 64px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+            color: #4f46e5;
+            font-size: 1.9rem;
+            transition: 0.2s;
+        }
+
+        .game-card h3 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-desc {
+            color: #475569;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 0.5rem 0 1.4rem;
+        }
+
+        .play-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8fafc;
+            padding: 0.55rem 1.4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s;
+        }
+
+        .play-link i {
+            font-size: 0.75rem;
+            transition: transform 0.2s;
+        }
+
+        .play-link:hover {
+            background: #4f46e5;
+            border-color: #4f46e5;
+            color: white;
+        }
+
+        .play-link:hover i {
+            transform: translateX(4px);
+            color: white;
+        }
+
+        .no-results-message {
             grid-column: 1 / -1;
             text-align: center;
             padding: 3rem;
-            border: 2px dashed #a3844d;
-            background: #131823;
-            font-size: 1.4rem;
-            font-family: 'Courier New', monospace;
-            color: #b7a882;
-            letter-spacing: 2px;
+            background: #ffffff;
+            border-radius: 48px;
+            border: 1px dashed #cbd5e1;
+            color: #475569;
         }
 
-        /* footer – pure classic */
         footer {
             text-align: center;
-            padding: 2.5rem 2rem;
-            background: #0a0e14;
-            border-top: 2px solid #a3844d;
-            font-size: 1rem;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 3px;
-            color: #8e9bb0;
-            text-transform: uppercase;
-            margin-top: 3rem;
+            padding: 2rem 0 2.5rem;
+            border-top: 1px solid #e9edf2;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #6c757d;
         }
 
-        footer span {
-            color: #a3844d;
-            margin: 0 10px;
-        }
-
-        /* responsive */
         @media (max-width: 700px) {
-            nav { font-size: 1.4rem; letter-spacing: 3px; padding: 1.2rem; }
-            .hero h1 { font-size: 2rem; padding: 0.8rem 1.5rem; }
-            .section-title .text { font-size: 1.4rem; letter-spacing: 4px; }
-            .search-wrapper button { padding: 1rem 1.2rem; font-size: 1rem; }
+            .app-wrapper {
+                padding: 0 1.2rem;
+            }
+            .electric-x {
+                font-size: 2.3rem;
+            }
+            .prime-text {
+                font-size: 1.6rem;
+            }
+            .games-suffix {
+                font-size: 0.9rem;
+            }
+            .header-bar {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .top-actions {
+                gap: 0.8rem;
+            }
+            .donate-btn {
+                padding: 0.45rem 1rem;
+                font-size: 0.8rem;
+            }
+            .game-card h3 {
+                font-size: 1.35rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- only "nts game" repeated, no extra words -->
-    <nav>
-        <div class="logo"><i class="fas fa-chess-knight"></i> NTS GAME <i class="fas fa-chess-knight"></i></div>
-    </nav>
-
-    <header class="hero">
-        <h1>NTS GAME</h1>
-        <p>classic · intellect · focus</p>
-    </header>
-
-    <!-- search – classic block -->
-    <div class="search-section">
-        <div class="search-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" placeholder="search nts game..." autocomplete="off">
-            <button id="searchBtn"><i class="fas fa-arrow-right"></i> FIND</button>
+<div class="app-wrapper">
+    <!-- Header with XPRIME electric identity -->
+    <div class="header-bar">
+        <div class="brand">
+            <div class="electric-x">X</div>
+            <span class="prime-text">PRIME</span>
+            <span class="games-suffix">GAMES</span>
+        </div>
+        <div class="top-actions">
+            <!-- search icon (opens search bar) -->
+            <div class="search-trigger" id="searchIconBtn">
+                <i class="fas fa-search"></i>
+            </div>
+            <!-- donate heart link: leads to donate.html -->
+            <a href="donate.html" class="donate-btn">
+                <i class="fas fa-heart"></i> DONATE
+            </a>
         </div>
     </div>
 
-    <main class="container">
-        <div class="section-title">
-            <span class="line"></span>
-            <span class="text">NTS GAME</span>
-            <span class="line"></span>
+    <!-- expandable search panel (hidden by default, toggled by search icon) -->
+    <div class="search-expand-area" id="searchExpandArea">
+        <div class="search-bar-modern">
+            <i class="fas fa-search"></i>
+            <input type="text" id="gameSearchInput" placeholder="Search games by name, genre, skill..." autocomplete="off">
+            <button class="search-clear-btn" id="clearSearchBtn" aria-label="clear"><i class="fas fa-times-circle"></i></button>
         </div>
+    </div>
 
-        <div class="result-count" id="resultCount"><span>10 GAMES</span></div>
+    <!-- result count chip -->
+    <div class="stats-badge">
+        <div class="game-count-chip" id="resultCountText"><span>10</span> GAMES READY</div>
+    </div>
 
-        <div class="game-grid" id="gameGrid">
-            <!-- Memory Matrix -->
-            <div class="game-card" data-name="Memory Matrix" data-tags="memory pattern">
-                <div class="game-icon"><i class="fas fa-table"></i></div>
-                <h3>MEMORY MATRIX</h3>
-                <p>short‑term memory & pattern</p>
-                <a href="game1.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Logic Flow -->
-            <div class="game-card" data-name="Logic Flow" data-tags="logic puzzle">
-                <div class="game-icon"><i class="fas fa-project-diagram"></i></div>
-                <h3>LOGIC FLOW</h3>
-                <p>complex puzzles & reasoning</p>
-                <a href="game2.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Quick Math -->
-            <div class="game-card" data-name="Quick Math" data-tags="math numbers">
-                <div class="game-icon"><i class="fas fa-square-root-alt"></i></div>
-                <h3>QUICK MATH</h3>
-                <p>calculation & numerical agility</p>
-                <a href="game3.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Pattern Master -->
-            <div class="game-card" data-name="Pattern Master" data-tags="pattern light focus">
-                <div class="game-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>PATTERN MASTER</h3>
-                <p>memorise light sequences</p>
-                <a href="game4.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Orbital Reflex -->
-            <div class="game-card" data-name="Orbital Reflex" data-tags="reflex reaction">
-                <div class="game-icon"><i class="fas fa-bullseye"></i></div>
-                <h3>ORBITAL REFLEX</h3>
-                <p>hand–eye coordination</p>
-                <a href="game5.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Cipher Dash -->
-            <div class="game-card" data-name="Cipher Dash" data-tags="cipher code">
-                <div class="game-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>CIPHER DASH</h3>
-                <p>decipher codes under pressure</p>
-                <a href="game6.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Grid Hunt -->
-            <div class="game-card" data-name="Grid Hunt" data-tags="grid numbers sequence">
-                <div class="game-icon"><i class="fas fa-th"></i></div>
-                <h3>GRID HUNT</h3>
-                <p>find numbers in sequence</p>
-                <a href="game7.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Sound Sequence -->
-            <div class="game-card" data-name="Sound Sequence" data-tags="sound auditory">
-                <div class="game-icon"><i class="fas fa-music"></i></div>
-                <h3>SOUND SEQUENCE</h3>
-                <p>auditory memory & tone</p>
-                <a href="game8.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Dual Focus -->
-            <div class="game-card" data-name="Dual Focus" data-tags="dual shapes">
-                <div class="game-icon"><i class="fas fa-clone"></i></div>
-                <h3>DUAL FOCUS</h3>
-                <p>same/different shapes</p>
-                <a href="game9.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <!-- Neuro-Tracker -->
-            <div class="game-card" data-name="Neuro-Tracker" data-tags="tracker visual">
-                <div class="game-icon"><i class="fas fa-eye"></i></div>
-                <h3>NEURO-TRACKER</h3>
-                <p>track moving green balls</p>
-                <a href="game10.html" class="btn"><span>PLAY</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
+    <!-- GAMES GRID (all classic intellect titles but under XPRIME) -->
+    <div class="games-grid" id="gamesGrid">
+        <!-- data attributes for search: name + tags + description -->
+        <div class="game-card" data-name="Memory Matrix" data-tags="memory pattern recall brain">
+            <div class="game-icon-modern"><i class="fas fa-border-all"></i></div>
+            <h3>MEMORY MATRIX</h3>
+            <div class="game-desc">Short‑term memory & pattern recognition — sharpen recall.</div>
+            <a href="game1.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
         </div>
-    </main>
+        <div class="game-card" data-name="Logic Flow" data-tags="logic puzzle reasoning critical">
+            <div class="game-icon-modern"><i class="fas fa-code-branch"></i></div>
+            <h3>LOGIC FLOW</h3>
+            <div class="game-desc">Complex puzzles & deductive reasoning challenges.</div>
+            <a href="game2.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Quick Math" data-tags="math numbers calculation arithmetic">
+            <div class="game-icon-modern"><i class="fas fa-calculator"></i></div>
+            <h3>QUICK MATH</h3>
+            <div class="game-desc">Numerical agility & rapid calculation drills.</div>
+            <a href="game3.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Pattern Master" data-tags="pattern light sequence visual">
+            <div class="game-icon-modern"><i class="fas fa-chart-line"></i></div>
+            <h3>PATTERN MASTER</h3>
+            <div class="game-desc">Memorise light sequences, boost visual memory.</div>
+            <a href="game4.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Orbital Reflex" data-tags="reflex reaction speed hand eye">
+            <div class="game-icon-modern"><i class="fas fa-crosshairs"></i></div>
+            <h3>ORBITAL REFLEX</h3>
+            <div class="game-desc">Hand‑eye coordination & lightning reflexes.</div>
+            <a href="game5.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Cipher Dash" data-tags="cipher code decryption cryptogram">
+            <div class="game-icon-modern"><i class="fas fa-key"></i></div>
+            <h3>CIPHER DASH</h3>
+            <div class="game-desc">Decode secret messages under time pressure.</div>
+            <a href="game6.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Grid Hunt" data-tags="grid numbers sequence search focus">
+            <div class="game-icon-modern"><i class="fas fa-table"></i></div>
+            <h3>GRID HUNT</h3>
+            <div class="game-desc">Find numbers in sequence, train attention.</div>
+            <a href="game7.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Sound Sequence" data-tags="sound auditory memory tone">
+            <div class="game-icon-modern"><i class="fas fa-headphones"></i></div>
+            <h3>SOUND SEQUENCE</h3>
+            <div class="game-desc">Auditory memory & tone matching challenge.</div>
+            <a href="game8.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Dual Focus" data-tags="dual shapes comparison focus visual">
+            <div class="game-icon-modern"><i class="fas fa-shapes"></i></div>
+            <h3>DUAL FOCUS</h3>
+            <div class="game-desc">Same/different shape comparison & concentration.</div>
+            <a href="game9.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-card" data-name="Neuro-Tracker" data-tags="tracker visual motion green ball">
+            <div class="game-icon-modern"><i class="fas fa-eye"></i></div>
+            <h3>NEURO-TRACKER</h3>
+            <div class="game-desc">Track moving green balls — advanced visual motion.</div>
+            <a href="game10.html" class="play-link">PLAY NOW <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
 
     <footer>
-        <span>✦</span> NTS GAME <span>✦</span> <br> ALL RIGHTS RESERVED · 2026
+        <span>⚡ XPRIME GAMES</span> — intellect & focus arena · classic archive 2026
     </footer>
+</div>
 
-    <!-- live search script (classic functionality) -->
-    <script>
-        (function() {
-            const searchInput = document.getElementById('searchInput');
-            const searchBtn = document.getElementById('searchBtn');
-            const gameCards = Array.from(document.querySelectorAll('.game-card'));
-            const gameGrid = document.getElementById('gameGrid');
-            const resultSpan = document.querySelector('#resultCount span');
+<script>
+    (function() {
+        // DOM elements
+        const searchExpandArea = document.getElementById('searchExpandArea');
+        const searchIcon = document.getElementById('searchIconBtn');
+        const searchInput = document.getElementById('gameSearchInput');
+        const clearBtn = document.getElementById('clearSearchBtn');
+        const allCards = Array.from(document.querySelectorAll('.game-card'));
+        const gamesGrid = document.getElementById('gamesGrid');
+        const resultSpan = document.querySelector('#resultCountText span');
 
-            function updateFilter() {
-                const term = searchInput.value.trim().toLowerCase();
-                let visibleCount = 0;
+        // Helper: update visible games & counter
+        function performSearch() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
 
-                gameCards.forEach(card => {
-                    const name = card.getAttribute('data-name').toLowerCase();
-                    const tags = card.getAttribute('data-tags').toLowerCase();
-                    const description = card.querySelector('p').innerText.toLowerCase();
-                    const searchable = name + ' ' + tags + ' ' + description;
+            allCards.forEach(card => {
+                const name = card.getAttribute('data-name')?.toLowerCase() || '';
+                const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
+                const desc = card.querySelector('.game-desc')?.innerText.toLowerCase() || '';
+                const fullText = `${name} ${tags} ${desc}`;
 
-                    if (term === '' || searchable.includes(term)) {
-                        card.style.display = 'flex';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                if (term === '') {
-                    resultSpan.innerText = `${visibleCount} GAMES`;
+                if (keyword === '' || fullText.includes(keyword)) {
+                    card.style.display = '';
+                    visibleCount++;
                 } else {
-                    resultSpan.innerText = `${visibleCount} RESULT${visibleCount !== 1 ? 'S' : ''} · “${searchInput.value}”`;
+                    card.style.display = 'none';
                 }
-
-                let noResultMsg = document.querySelector('.no-result');
-                if (visibleCount === 0) {
-                    if (!noResultMsg) {
-                        noResultMsg = document.createElement('div');
-                        noResultMsg.className = 'no-result';
-                        noResultMsg.innerHTML = '⛭ NO MATCH · TRY AGAIN ⛭';
-                        gameGrid.appendChild(noResultMsg);
-                    }
-                } else {
-                    if (noResultMsg) noResultMsg.remove();
-                }
-            }
-
-            searchInput.addEventListener('input', updateFilter);
-            searchBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                updateFilter();
             });
 
-            updateFilter();
-        })();
-    </script>
-</body>
-</html>
+            // update result badge text
+            if (keyword === '') {
+                resultSpan.innerText = visibleCount;
+                document.getElementById('resultCountText').innerHTML = `<span>${visibleCount}</span> GAMES READY`;
+            } else {
+                resultSpan.innerText = visibleCount;
+                document.getElementById('resultCountText').innerHTML = `<span>${visibleCount}</span> RESULT${visibleCount !== 1 ? 'S' : ''} FOR “${escapeHtml(keyword)}”`;
+            }
+
+            // handle no-results message elegantly
+            let existingNoResult = document.querySelector('.no-results-message');
+            if (visibleCount === 0) {
+                if (!existingNoResult) {
+                    const noResultDiv = document.createElement('div');
+                    noResultDiv.className = 'no-results-message';
+                    noResultDiv.innerHTML = '<i class="fas fa-gamepad" style="font-size: 2rem; opacity: 0.6; margin-bottom: 0.5rem; display: block;"></i> No games found · adjust search ✨';
+                    gamesGrid.appendChild(noResultDiv);
+                }
+            } else {
+                if (existingNoResult) existingNoResult.remove();
+            }
+        }
+
+        // simple escape for safety in result message
+        function escapeHtml(str) {
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+                return c;
+            });
+        }
+
+        // open/close search area with smooth transition
+        let isSearchOpen = false;
+        function openSearchPanel(forceOpen = true) {
+            if (forceOpen) {
+                searchExpandArea.classList.add('open');
+                isSearchOpen = true;
+                
